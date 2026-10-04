@@ -1,23 +1,31 @@
-# IRON & INK — Tattoo Shop Site (in build)
+# IRON & INK — Tattoo Shop Site
 
-Concept tattoo shop website for Elijah's portfolio/client outreach.
+Immersive concept tattoo studio site (portfolio/demo piece).
 
-- **Design system:** dark immersive (`#0C0C0F` bg, `#7C3AED` accent) — see the
-  session DESIGN.md (overrides the standing constitution for this project).
-- **Stack:** static HTML/CSS/JS, no build step. Will deploy on Cloudflare Pages.
+- **Design system:** session override (Oct 3, 2026) — dark `#0C0C0F` bg,
+  purple `#7C3AED` accent, Inter throughout, 650ms reveals, 200ms hovers.
+  See the session DESIGN.md; the standing constitution is overridden for this project only.
+- **Stack:** static HTML/CSS/JS, no build step. Deploys on Cloudflare Pages.
 
-## Current state
+## Files
 
-- `js/main.js` — interaction script (Elijah's code, saved Oct 3, 2026):
-  animated counters (`.count` + `data-target`), drag-to-scroll gallery
-  (`.gallery-track`), touch support, parallax (`.parallax-bg` /
-  `.parallax-section`), smooth nav links.
-- HTML/CSS still to build — the script expects: `.count` elements with
-  `data-target`, a `.gallery-track` section, `.parallax-bg` inside
-  `.parallax-section`, and `nav a[href^="#"]` links.
+- `index.html` — full page: nav, hero (counters), flash gallery
+  (drag-to-scroll), parallax quote divider, artists, booking form, visit, footer.
+- `css/style.css` — the session token system.
+- `js/main.js` — Elijah's interaction script (counters, drag gallery,
+  parallax, smooth nav; counter observer head reconstructed from a fragment).
+  Untouched by the page build — page hooks (`.count`, `.gallery-track`,
+  `.parallax-*`, nav links) were built to match it.
+- `privacy.html` — footer-linked privacy page (demo copy).
+
+## Sections
+
+Hero → flash (6 original SVG flash designs) → parallax → artists →
+booking (demo form, sends nothing) → visit → footer.
 
 ## Notes
 
-- Counter observer head was reconstructed from a pasted fragment; logic matches.
-- Gallery/parallax blocks are null-guarded so the script runs clean on pages
-  where those sections don't exist yet.
+- All content is illustrative: shop name, artist names/bios, flash prices,
+  stats, hours, address. Replace with real client details before any real use.
+- No photos — all artwork is original inline SVG linework.
+- No reviews/testimonials (none invented).
