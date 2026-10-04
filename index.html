@@ -7,10 +7,22 @@
 <meta name="description" content="IRON & INK — a tattoo studio. Bold blackwork, fine line, and traditional flash. Book a consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-name">IRON <span>&amp;</span> INK</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress"><span id="scrollProgress"></span></div>
+
+<!-- Film grain -->
+<div class="grain" aria-hidden="true"></div>
 
 <nav>
   <a class="brand" href="#top">IRON <span>&amp;</span> INK</a>
@@ -22,75 +34,73 @@
   </div>
 </nav>
 
+<!-- Sticky hero -->
 <header class="hero" id="top">
   <div class="hero-flash" aria-hidden="true">
-    <!-- faint flash linework backdrop -->
-    <svg viewBox="0 0 200 200"><path d="M100 20 L100 150 M85 60 L115 60 M92 150 L92 178 M108 150 L108 178 M84 178 L116 178" stroke-width="5"/></svg>
-    <svg viewBox="0 0 200 200"><circle cx="100" cy="95" r="45" stroke-width="5"/><circle cx="100" cy="95" r="16" stroke-width="5"/><path d="M100 20 L100 50 M100 140 L100 170 M25 95 L55 95 M145 95 L175 95" stroke-width="5"/></svg>
-    <svg viewBox="0 0 200 200"><path d="M60 170 C60 120 140 130 140 80 C140 55 115 50 105 65 C98 76 108 88 118 82" stroke-width="5" fill="none"/><circle cx="112" cy="72" r="4"/></svg>
+    <svg viewBox="0 0 200 200"><path d="M100 12 L114 118 L100 168 L86 118 Z" fill="none" stroke-width="6"/><path d="M66 58 L134 58" stroke-width="8"/><path d="M90 58 L90 26 M110 58 L110 26" stroke-width="6"/></svg>
+    <svg viewBox="0 0 200 200"><path d="M28 100 C58 58 142 58 172 100 C142 142 58 142 28 100 Z" fill="none" stroke-width="6"/><circle cx="100" cy="100" r="26" fill="none" stroke-width="6" class="accent-stroke"/><circle cx="100" cy="100" r="9" class="accent-fill"/></svg>
+    <svg viewBox="0 0 200 200"><path d="M52 168 C52 122 148 134 148 88 C148 56 114 52 104 70 C97 83 110 96 121 87" fill="none" stroke-width="7"/><circle cx="112" cy="77" r="5" class="accent-fill"/></svg>
   </div>
-  <div class="container hero-inner">
-    <p class="label reveal">Tattoo studio</p>
-    <h1 class="reveal">IRON <span class="amp">&amp;</span> INK</h1>
-    <p class="hero-sub reveal">Bold lines. Honest work.<br>Blackwork, fine line &amp; traditional — drawn to last.</p>
-    <div class="hero-ctas reveal">
-      <a href="#booking" class="btn">Book a consultation</a>
-      <a href="#flash" class="btn ghost">View flash</a>
-    </div>
-    <div class="stats reveal">
-      <div class="stat"><span class="count" data-target="10">0</span><span class="stat-label">years inking</span></div>
-      <div class="stat"><span class="count" data-target="4">0</span><span class="stat-label">resident artists</span></div>
-      <div class="stat"><span class="count" data-target="2500">0</span><span class="stat-label">pieces &amp; counting</span></div>
-    </div>
+  <div class="hero-inner">
+    <p class="label hero-eyebrow">Tattoo studio</p>
+    <h1>IRON <span class="amp">&amp;</span> INK</h1>
+    <p class="hero-sub">Bold lines. Honest work.</p>
   </div>
-  <a class="scroll-hint" href="#flash" aria-label="Scroll to flash">↓</a>
+  <div class="hero-foot">
+    <div class="stat"><span class="count" data-target="10">0</span><span class="stat-label">years</span></div>
+    <div class="stat"><span class="count" data-target="4">0</span><span class="stat-label">artists</span></div>
+    <div class="stat"><span class="count" data-target="2500">0</span><span class="stat-label">pieces</span></div>
+  </div>
+  <a class="scroll-hint" href="#flash" aria-label="Scroll">Scroll</a>
 </header>
 
-<main>
+<main class="content">
   <!-- FLASH -->
-  <section id="flash">
+  <section id="flash" class="flash-section">
     <div class="container">
       <p class="label reveal">Flash — available designs</p>
-      <div class="section-head reveal">
-        <h2>Pick your<br>poison.</h2>
-        <p>Original flash, drawn in-house. Claim a piece as-is or bring it to your artist to make it yours. <span class="drag-hint">Drag →</span></p>
-      </div>
+      <h2 class="giant reveal">Pick your<br>poison.</h2>
+      <p class="section-lede reveal">Original flash, drawn in-house. Drag through the wall — claim a piece as-is, or bring it to your artist and make it yours.</p>
     </div>
     <div class="gallery-track reveal">
       <article class="flash-card">
-        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M100 15 L112 120 L100 165 L88 120 Z" fill="none" stroke-width="5"/><path d="M70 60 L130 60" stroke-width="7"/><path d="M92 60 L92 30 M108 60 L108 30" stroke-width="5"/><path d="M84 165 L116 165 M88 178 L112 178" stroke-width="5"/></svg></div>
+        <span class="flash-num">01</span>
+        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M100 12 L114 118 L100 168 L86 118 Z" fill="none" stroke-width="6"/><path d="M66 58 L134 58" stroke-width="8"/><path d="M90 58 L90 26 M110 58 L110 26" stroke-width="6"/></svg></div>
         <h3>Dagger</h3><p>Blackwork · from $120</p>
       </article>
       <article class="flash-card">
-        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M100 60 C70 40 40 55 45 90 C48 115 75 125 100 110 C125 125 152 115 155 90 C160 55 130 40 100 60 Z" fill="none" stroke-width="5"/><path d="M100 60 L100 150" stroke-width="5"/><path d="M100 80 C85 95 85 120 100 140 C115 120 115 95 100 80" fill="none" stroke-width="4"/><path d="M85 55 L75 35 M115 55 L125 35" stroke-width="4"/></svg></div>
+        <span class="flash-num">02</span>
+        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M100 58 C66 36 34 54 40 92 C44 120 74 130 100 112 C126 130 156 120 160 92 C166 54 134 36 100 58 Z" fill="none" stroke-width="6"/><path d="M100 58 L100 152" stroke-width="6"/><path d="M84 52 L72 30 M116 52 L128 30" stroke-width="5"/></svg></div>
         <h3>Death moth</h3><p>Blackwork · from $150</p>
       </article>
       <article class="flash-card">
-        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M55 165 C55 125 145 135 145 90 C145 60 115 55 105 72 C98 84 110 96 120 88" fill="none" stroke-width="6"/><circle cx="112" cy="78" r="5" fill="none" stroke-width="4"/><path d="M120 88 L138 82 L126 96 Z" fill="none" stroke-width="4"/></svg></div>
+        <span class="flash-num">03</span>
+        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M52 168 C52 122 148 134 148 88 C148 56 114 52 104 70 C97 83 110 96 121 87" fill="none" stroke-width="7"/><circle cx="112" cy="77" r="5" class="accent-fill"/></svg></div>
         <h3>Serpent</h3><p>Fine line · from $140</p>
       </article>
       <article class="flash-card">
-        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M30 100 C60 60 140 60 170 100 C140 140 60 140 30 100 Z" fill="none" stroke-width="5"/><circle cx="100" cy="100" r="24" fill="none" stroke-width="5"/><circle cx="100" cy="100" r="8"/><path d="M100 30 L100 52 M100 148 L100 170 M52 52 L66 66 M148 52 L134 66" stroke-width="4"/></svg></div>
+        <span class="flash-num">04</span>
+        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M28 100 C58 58 142 58 172 100 C142 142 58 142 28 100 Z" fill="none" stroke-width="6"/><circle cx="100" cy="100" r="26" fill="none" stroke-width="6" class="accent-stroke"/><circle cx="100" cy="100" r="9" class="accent-fill"/></svg></div>
         <h3>All-seeing eye</h3><p>Blackwork · from $130</p>
       </article>
       <article class="flash-card">
-        <div class="flash-art"><svg viewBox="0 0 200 200"><circle cx="100" cy="85" r="48" fill="none" stroke-width="5"/><path d="M70 130 L70 160 L130 160 L130 130" fill="none" stroke-width="5"/><circle cx="82" cy="82" r="12" fill="none" stroke-width="4"/><circle cx="118" cy="82" r="12" fill="none" stroke-width="4"/><path d="M100 95 L100 115 M88 115 L112 115" stroke-width="4"/><path d="M82 160 L82 172 M94 160 L94 172 M106 160 L106 172 M118 160 L118 172" stroke-width="4"/></svg></div>
+        <span class="flash-num">05</span>
+        <div class="flash-art"><svg viewBox="0 0 200 200"><circle cx="100" cy="84" r="50" fill="none" stroke-width="6"/><path d="M68 128 L68 162 L132 162 L132 128" fill="none" stroke-width="6"/><circle cx="81" cy="81" r="13" fill="none" stroke-width="5"/><circle cx="119" cy="81" r="13" fill="none" stroke-width="5"/><path d="M92 108 L108 108" stroke-width="6"/></svg></div>
         <h3>Skull</h3><p>Traditional · from $160</p>
       </article>
       <article class="flash-card">
-        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M100 55 C80 55 70 75 78 95 C84 110 100 118 100 140" fill="none" stroke-width="5"/><path d="M100 55 C120 55 130 75 122 95 C116 110 104 116 100 128" fill="none" stroke-width="4"/><path d="M100 140 L100 180" stroke-width="5"/><path d="M100 160 C85 155 75 145 72 132 M100 160 C115 155 125 145 128 132" fill="none" stroke-width="4"/><path d="M78 95 C70 90 62 90 55 95 M122 95 C130 90 138 90 145 95" stroke-width="4"/></svg></div>
+        <span class="flash-num">06</span>
+        <div class="flash-art"><svg viewBox="0 0 200 200"><path d="M100 40 C78 60 78 110 100 132 C122 110 122 60 100 40 Z" fill="none" stroke-width="6"/><path d="M100 132 L100 172" stroke-width="6"/><path d="M100 150 C84 146 74 136 70 122 M100 150 C116 146 126 136 130 122" fill="none" stroke-width="5"/></svg></div>
         <h3>Wild rose</h3><p>Fine line · from $110</p>
       </article>
     </div>
     <p class="container fineprint reveal">Flash prices illustrative — final quote depends on size &amp; placement. All flash is original to the studio.</p>
   </section>
 
-  <!-- PARALLAX -->
-  <div class="parallax-section">
-    <div class="parallax-bg" aria-hidden="true"></div>
-    <div class="container parallax-inner">
-      <p class="parallax-quote reveal">“A tattoo should look good at twenty paces and at twenty years.”</p>
-      <p class="label reveal">— the house rule</p>
+  <!-- CLIP QUOTE -->
+  <div class="clip-reveal" id="clipReveal">
+    <div class="clip-inner">
+      <p class="clip-quote">“A tattoo should look good at twenty paces — and at twenty years.”</p>
     </div>
   </div>
 
@@ -98,88 +108,88 @@
   <section id="artists">
     <div class="container">
       <p class="label reveal">Resident artists</p>
-      <h2 class="reveal">Hands you can trust.</h2>
-      <div class="artist-grid">
-        <article class="artist-card reveal">
-          <div class="artist-mark">MK</div>
-          <h3>Mara Kade</h3>
-          <p class="artist-style">Blackwork · large scale</p>
-          <p>Heavy blacks, clean lines, pieces built to age well. Books 2–3 months out.</p>
-        </article>
-        <article class="artist-card reveal">
-          <div class="artist-mark">JR</div>
-          <h3>Juno Reyes</h3>
-          <p class="artist-style">Fine line · delicate</p>
-          <p>Single-needle detail, botanical and ornamental work. Great first-tattoo pick.</p>
-        </article>
-        <article class="artist-card reveal">
-          <div class="artist-mark">DO</div>
-          <h3>Dex Okafor</h3>
-          <p class="artist-style">Traditional · bold color</p>
-          <p>Old-school flash with a heavy hand. Walk-ins welcome when the sign's out.</p>
-        </article>
-        <article class="artist-card reveal">
-          <div class="artist-mark">+</div>
-          <h3>Guest artists</h3>
-          <p class="artist-style">Rotating · announced monthly</p>
-          <p>Traveling artists take over the back room a few days each month. Watch this space.</p>
-        </article>
+      <h2 class="giant reveal">Hands you<br>can trust.</h2>
+      <div class="artist-rows">
+        <a class="artist-row reveal" href="#booking">
+          <span class="artist-name">Mara Kade</span>
+          <span class="artist-style">Blackwork · large scale</span>
+          <span class="artist-arrow">→</span>
+        </a>
+        <a class="artist-row reveal" href="#booking">
+          <span class="artist-name">Juno Reyes</span>
+          <span class="artist-style">Fine line · delicate</span>
+          <span class="artist-arrow">→</span>
+        </a>
+        <a class="artist-row reveal" href="#booking">
+          <span class="artist-name">Dex Okafor</span>
+          <span class="artist-style">Traditional · bold color</span>
+          <span class="artist-arrow">→</span>
+        </a>
+        <a class="artist-row reveal" href="#booking">
+          <span class="artist-name">Guest artists</span>
+          <span class="artist-style">Rotating · monthly</span>
+          <span class="artist-arrow">→</span>
+        </a>
       </div>
-      <p class="fineprint reveal">Artist names and bios are illustrative placeholders for this concept.</p>
+      <p class="fineprint reveal">Artist names are illustrative placeholders for this concept.</p>
     </div>
   </section>
 
+  <!-- PARALLAX -->
+  <div class="parallax-section">
+    <div class="parallax-bg" aria-hidden="true"></div>
+    <div class="container parallax-inner">
+      <p class="label reveal">The process</p>
+      <p class="parallax-big reveal">Consult. Draw. Ink. Heal.</p>
+      <p class="reveal">Every piece starts with a conversation and a custom drawing. No flash off the wall unless you want it that way.</p>
+    </div>
+  </div>
+
   <!-- BOOKING -->
   <section id="booking" class="booking">
-    <div class="container booking-grid">
-      <div class="reveal">
-        <p class="label">Booking</p>
-        <h2>Start with a<br>consultation.</h2>
-        <p>Tell us the idea, where it lives on your body, and roughly how big. Your artist replies within two days with a quote and the earliest opening.</p>
-        <ul class="booking-notes">
-          <li><strong>$50 deposit</strong> — goes toward your piece, locks your date.</li>
-          <li><strong>18+ only</strong> — valid ID at your appointment.</li>
-          <li><strong>Free consults</strong> — 15 minutes, no pressure.</li>
-        </ul>
-      </div>
+    <div class="container booking-inner">
+      <p class="label reveal">Booking</p>
+      <h2 class="giant reveal">Get inked.</h2>
+      <p class="section-lede reveal">Tell us the idea, where it lives, roughly how big. Your artist replies within two days with a quote and the earliest opening.</p>
       <form class="reveal" id="bookingForm" novalidate>
-        <label>Name<input type="text" name="name" required autocomplete="name"></label>
-        <label>Phone or email<input type="text" name="contact" required autocomplete="email"></label>
-        <label>Preferred artist
-          <select name="artist">
-            <option>No preference</option>
-            <option>Mara Kade</option>
-            <option>Juno Reyes</option>
-            <option>Dex Okafor</option>
-          </select>
-        </label>
-        <label>Placement<input type="text" name="placement" placeholder="e.g. outer forearm"></label>
+        <div class="form-row">
+          <label>Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Phone or email<input type="text" name="contact" required autocomplete="email"></label>
+        </div>
+        <div class="form-row">
+          <label>Preferred artist
+            <select name="artist">
+              <option>No preference</option>
+              <option>Mara Kade</option>
+              <option>Juno Reyes</option>
+              <option>Dex Okafor</option>
+            </select>
+          </label>
+          <label>Placement<input type="text" name="placement" placeholder="e.g. outer forearm"></label>
+        </div>
         <label>Your idea<textarea name="idea" rows="4" required placeholder="Describe the piece — style, size, references…"></textarea></label>
         <button type="submit" class="btn">Request consultation</button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
+      <ul class="booking-notes reveal">
+        <li><strong>$50 deposit</strong> locks your date, goes toward the piece.</li>
+        <li><strong>18+ only.</strong> Valid ID at your appointment.</li>
+        <li><strong>Free 15-min consults.</strong> No pressure.</li>
+      </ul>
     </div>
   </section>
 
   <!-- VISIT -->
-  <section id="visit">
+  <section id="visit" class="visit">
     <div class="container">
       <p class="label reveal">Visit</p>
-      <h2 class="reveal">Find the shop.</h2>
+      <h2 class="giant reveal">Find the shop.</h2>
       <div class="visit-grid reveal">
-        <div>
-          <h3>Hours</h3>
-          <p>Tue – Sat · 11am – 7pm<br>Walk-ins Fri &amp; Sat, first come first served.<br>Closed Sun &amp; Mon.</p>
-        </div>
-        <div>
-          <h3>Location</h3>
-          <p>000 Main Street<br>Los Angeles, CA<br><span class="fineprint">Address illustrative — concept site.</span></p>
-        </div>
-        <div>
-          <h3>Good to know</h3>
-          <p>Eat before you come. Bring reference images. We take card and cash.</p>
-        </div>
+        <div><h3>Hours</h3><p>Tue – Sat · 11am – 7pm<br>Walk-ins Fri &amp; Sat.<br>Closed Sun &amp; Mon.</p></div>
+        <div><h3>Location</h3><p>000 Main Street<br>Los Angeles, CA</p></div>
+        <div><h3>Good to know</h3><p>Eat before you come.<br>Bring references.<br>Card &amp; cash.</p></div>
       </div>
+      <p class="fineprint reveal">Hours and address illustrative — concept site.</p>
     </div>
   </section>
 </main>
@@ -187,21 +197,59 @@
 <footer>
   <div class="container footer-inner">
     <a class="brand" href="#top">IRON <span>&amp;</span> INK</a>
-    <p>Concept site — all names, prices, and details are illustrative.</p>
-    <p><a href="privacy.html">Privacy Policy</a></p>
+    <p>Concept site — all names, prices, and details are illustrative. · <a href="privacy.html">Privacy</a></p>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
 <script>
-  // 650ms reveal per the session design system (additive; main.js untouched)
+  // Page chrome: loader, reveals, clip reveal, scroll progress, demo form.
+  // main.js (Elijah's) is untouched.
   (function () {
+    // Loader
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById('top').classList.add('in-view');
+      }, 1800);
+    });
+    // Safety: never trap the user behind the loader
+    setTimeout(function () {
+      document.getElementById('loader').classList.add('hidden');
+      document.getElementById('top').classList.add('in-view');
+    }, 4000);
+
+    // 650ms reveals
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    // Clip-path quote reveal
+    var clipEl = document.getElementById('clipReveal');
+    if (clipEl) {
+      var clipIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); clipIo.unobserve(e.target); }
+        });
+      }, { threshold: 0.3 });
+      clipIo.observe(clipEl);
+    }
+
+    // Scroll progress + hero parallax fade
+    var prog = document.getElementById('scrollProgress');
+    var hero = document.getElementById('top');
+    window.addEventListener('scroll', function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      if (prog && max > 0) prog.style.width = (h.scrollTop / max * 100) + '%';
+      if (hero) {
+        var p = Math.min(h.scrollTop / window.innerHeight, 1);
+        hero.style.setProperty('--hero-fade', 1 - p);
+      }
+    }, { passive: true });
 
     // Demo form: no backend — confirm locally, send nothing.
     var form = document.getElementById('bookingForm');
